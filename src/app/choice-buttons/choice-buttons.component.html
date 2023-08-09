@@ -1,0 +1,20 @@
+<div class="choice-buttons">
+  <ng-container *ngIf="isResult; else edit">
+    <button class="anwers-btn"
+      *ngFor="let option of options"
+      [class.wrong]="option === value && correctAnswer !== option"
+      [class.selected]="(correctAnswer === value && option === value) || correctAnswer === option">
+      <span [innerHTML]="option"></span>
+    </button>
+
+  </ng-container>
+  <ng-template #edit>
+    <button class="anwers-btn"
+      *ngFor="let option of options"
+      [class.selected]="option === value"
+      (click)="selectOption(option)"
+    >
+    <span [innerHTML]="option"></span>
+    </button>
+  </ng-template>
+</div>

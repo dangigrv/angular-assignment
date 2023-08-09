@@ -1,0 +1,32 @@
+.quiz-maker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid lightgray;
+  padding: 20px;
+  .page-title{
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+  form {
+    display: flex;
+    div {
+      margin-right: 20px;
+    }
+  }
+  .question-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    .question {
+      margin-bottom: 10px;
+      button {
+        margin-right: 5px;
+      }
+    }
+  }
+  #categorySelect {
+    width: 350px;
+  }
+}
+

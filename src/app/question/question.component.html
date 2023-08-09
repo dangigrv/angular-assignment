@@ -1,0 +1,14 @@
+<div *ngFor="let question of questions; index as i" class="question">
+  <div>
+    <span [innerHTML]="question?.question"></span>
+  </div>
+  <div>
+    <app-choice-buttons
+      [options]="question?.answers || []"
+      [formControl]="getFormArrayControl(i)"
+      [isResult]="isResult"
+      name="choice"
+      [correctAnswer]="question.correct_answer"
+    ></app-choice-buttons>
+  </div>
+</div>

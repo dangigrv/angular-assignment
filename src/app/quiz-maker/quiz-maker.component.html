@@ -1,0 +1,28 @@
+<div class="quiz-maker">
+<div class="page-title"> Quiz Maker</div>
+<form [formGroup]="quizForm">
+  <div>
+    <select id="categorySelect" formControlName="category">
+      <option disabled> Select a Category</option>
+      <option [value]="category.id" *ngFor="let category of categories">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <select id="difficultySelect" formControlName="difficulty">
+      <option disabled> Select difficulty</option>
+      <option [value]="difficulty.value" *ngFor="let difficulty of difficulties">
+        {{ difficulty.label }}
+      </option>
+    </select>
+  </div>
+
+  <button id="createBtn" (click)="create()" [disabled]="quizForm.invalid">Create</button>
+</form>
+
+<div class="question-container" *ngIf="questions.length">
+  <app-question [questions]="questions" [formArray]="formArray"></app-question>
+  <button (click)="submit()" *ngIf="formArray.valid">Submit</button>
+</div>
+</div>

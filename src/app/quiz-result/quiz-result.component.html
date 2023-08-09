@@ -1,0 +1,13 @@
+<div class="result-container">
+  <div class="page-title">Results</div>
+  <div>
+    <app-question [questions]="questions" [isResult]="true"></app-question>
+  </div>
+  <div>
+    <span  [ngClass]="{'red': correctAnswers <= 1, 'yellow': correctAnswers >=2 && correctAnswers <=3, 'green': correctAnswers >=4}">
+      You scored {{ correctAnswers }} out of {{ questions.length }}</span>
+    </div>
+    <div class="redirect-quiz">
+      <button [routerLink]="'maker'">Create a new quiz</button>
+    </div>
+</div>

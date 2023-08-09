@@ -1,0 +1,20 @@
+.choice-buttons {
+  display: flex;
+}
+.selected {
+  background-color: green;
+  color: white;
+}
+
+.wrong {
+  background-color: red;
+  color: white;
+}
+
+.anwers-btn {
+  margin: 10px 10px 10px 0px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+
